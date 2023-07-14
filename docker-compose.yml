@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  web:
+    image: localhost:5000/react-devops-demo
+    build: .
+    ports:
+      - "3000:3000"
+    expose:
+      - 3001
+    healthcheck:
+      interval: 10s
+      timeout: 10s
+      retries: 2
+      start_period: 1m
