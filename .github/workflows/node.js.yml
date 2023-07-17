@@ -31,11 +31,12 @@ jobs:
     - run: yarn install
     - run: yarn run build --if-present
     - run: yarn test
-    - name: Git clone gh-pages
-      run: git clone git@github.com:cloudyk123/react-containerization.git -b gh-pages
+#     - name: Git clone gh-pages
+#       run: git clone git@github.com:cloudyk123/react-containerization.git -b gh-pages
     - name: deploy to gh-pages
-      run: yarn run deploy
-#       uses: peaceiris/actions-gh-pages@v3
-#       with:
-#         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-#         publish_dir: ./build
+#       run: yarn run deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
+        allow_empty_commit: true
