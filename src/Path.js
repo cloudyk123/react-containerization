@@ -9,9 +9,9 @@ function Path() {
     <Router>
         <Routes>
             <Route path="/react-containerization/" element={<Home/>}/>
-            <Route path="/react-containerization/login" element={<Login/>}/>
+            <Route path="/react-containerization/login/" element={<Login/>}/>
             <Route path="*" element={<Notfoundpage/>}/>
-            <Route path={"/react-containerization/timeline"} element={<Timeline/>}/>
+            <Route path={"/react-containerization/timeline/"} element={<Timeline/>}/>
         </Routes>
     </Router>
 )
