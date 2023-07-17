@@ -18,6 +18,10 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: Setup User Information
+      run: |
+        git config --global user.email "yusungkung35@gmail.com"
+        git config --global user.name "cloudyk123"
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -27,8 +31,8 @@ jobs:
     - run: yarn install
     - run: yarn run build --if-present
     - run: yarn test
-#     - name: deploy to gh-pages
-#       run: yarn run deploy
+    - name: deploy to gh-pages
+      run: yarn run deploy
 #       uses: peaceiris/actions-gh-pages@v3
 #       with:
 #         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
