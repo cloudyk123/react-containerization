@@ -27,8 +27,8 @@ jobs:
     - run: yarn install
     - run: yarn run build --if-present
     - run: yarn test
-    - name: deploy to gh-pages
-      run: yarn run deploy
+#     - name: deploy to gh-pages
+#       run: yarn run deploy
 #       uses: peaceiris/actions-gh-pages@v3
 #       with:
 #         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
