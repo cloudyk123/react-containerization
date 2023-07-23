@@ -1,5 +1,30 @@
 .text-center {
+    /*position: absolute;*/
     text-align: center;
+    float: right;
+    color: #333;
+    margin-left: 400px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content{
+    margin-top: 10px;
+}
+
+.image{
+    width: 30%;
+    /*height: 70%;*/
+    /*!*border-radius: 50%;*!*/
+    /*background-color: #fff;*/
+    /*border: 2px solid #fff;*/
+    float: left;
+    margin-left: 100px;
+    /*top: 50%;*/
+    /*transform: translate(-50%, -50%);*/
 }
 
 .root-div {
@@ -12,79 +37,18 @@
     margin: 0 auto;
 }
 
-.image{
-    width: 50%;
-    /*height: 100px;*/
-    /*!*border-radius: 50%;*!*/
-    /*background-color: #fff;*/
-    /*border: 2px solid #fff;*/
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    display: flex;
 }
 
-.cd-h-timeline__events {
-    position: relative;
+.left-container {
+    flex: 1;
+    background-color: lightblue;
+    padding: 20px;
 }
 
-.cd-h-timeline__event {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    left: 0;
-    top: 0;
-    transform: translateX(-100%);
-    opacity: 0;
-    animation-duration: 0.4s;
-    animation-timing-function: ease-in-out;
-}
-
-.cd-h-timeline__event--selected {
-/*// selected event info*/
-    position: relative;
-    z-index: 2;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.cd-h-timeline__event--enter-right,
-.cd-h-timeline__event--leave-right {
-/*// animate event info*/
-animation-name: cd-enter-right;
-}
-
-.cd-h-timeline__event--enter-left,
-.cd-h-timeline__event--leave-left {
-/*// animate event info*/
-animation-name: cd-enter-left;
-}
-
-.cd-h-timeline__event--leave-right,
-.cd-h-timeline__event--leave-left {
-    animation-direction: reverse;
-}
-
-@keyframes cd-enter-right {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0%);
-    }
-}
-
-@keyframes cd-enter-left {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0%);
-    }
+.right-container {
+    flex: 1;
+    background-color: lightgreen;
+    padding: 20px;
 }
